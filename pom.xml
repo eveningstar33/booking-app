@@ -54,6 +54,8 @@
         </dependency>
     </dependencies>
 
+    <!-- the build plugin will generate our jar -->
+
     <build>
         <plugins>
             <plugin>
