@@ -1,8 +1,18 @@
-package com.dgs.bookingapp;
+package com.dgs.bookingapp.model;
 
 // This is the model
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class HotelBooking {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private long id;
 
     private String hotelName;
     private double pricePerNight;
@@ -32,5 +42,9 @@ public class HotelBooking {
 
     public double getTotalPrice() {
         return pricePerNight * nbOfNights;
+    }
+
+    public long getId() {
+        return id;
     }
 }
