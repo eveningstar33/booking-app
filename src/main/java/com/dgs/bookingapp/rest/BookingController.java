@@ -29,12 +29,16 @@ public class BookingController {
         return bookingRepository.findByPricePerNightLessThan(price);
     }
 
-    @PostMapping("/create")
-    public List<HotelBooking> create(@RequestBody HotelBooking hotelBooking) {
+    @PostMapping("/update")
+    public HotelBooking update(@RequestBody HotelBooking hotelBooking) {
 
-        bookingRepository.save(hotelBooking);
+        return bookingRepository.save(hotelBooking);
+    }
 
-        return bookingRepository.findAll();
+    @PutMapping("/create")
+    public HotelBooking create(@RequestBody HotelBooking hotelBooking) {
+
+        return bookingRepository.save(hotelBooking);
     }
 
     @DeleteMapping("/delete/{id}")

@@ -2,31 +2,21 @@ package com.dgs.bookingapp.model;
 
 // This is the model
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "hotels")
 public class HotelBooking {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String hotelName;
+
     private double pricePerNight;
+
     private int nbOfNights;
-
-    public HotelBooking() {
-
-    }
-
-    public HotelBooking(String hotelName, double pricePerNight, int nbOfNights) {
-        this.hotelName = hotelName;
-        this.pricePerNight = pricePerNight;
-        this.nbOfNights = nbOfNights;
-    }
 
     public String getHotelName() {
         return hotelName;
@@ -46,5 +36,21 @@ public class HotelBooking {
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
+    }
+
+    public void setPricePerNight(double pricePerNight) {
+        this.pricePerNight = pricePerNight;
+    }
+
+    public void setNbOfNights(int nbOfNights) {
+        this.nbOfNights = nbOfNights;
     }
 }
