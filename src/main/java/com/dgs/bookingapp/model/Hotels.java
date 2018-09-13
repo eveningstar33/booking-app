@@ -5,8 +5,7 @@ package com.dgs.bookingapp.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "hotels")
-public class HotelBooking {
+public class Hotels {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
