@@ -1,4 +1,4 @@
-package com.dgs.bookingapp.rest;
+package com.dgs.bookingapp.controllers;
 
 import com.dgs.bookingapp.dao.BookingRepository;
 import com.dgs.bookingapp.model.HotelBooking;
@@ -47,5 +47,4 @@ public class BookingController {
 
         return bookingRepository.findAll();
     }
-
 }
